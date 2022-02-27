@@ -52,6 +52,8 @@ export class Trade {
         const sinceLastCall = now - lastTrade.tradeTime.toNumber();
         if (sinceLastCall < tradeDelay) {
           console.log('trade delay', (sinceLastCall / 60 / 60).toFixed(2));
+          await Utils.delay(60_000);
+          continue;
         }
       }
 
