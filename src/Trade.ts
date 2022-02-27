@@ -20,6 +20,7 @@ export class Trade {
     const provider = new ethers.providers.JsonRpcProvider(config.rpcUrl);
     const signer = new ethers.Wallet(config.privateKey, provider);
     console.log("signer", signer.address);
+    console.log("bot", config.bot);
 
     const bot = TradeBot__factory.connect(config.bot, signer);
 
